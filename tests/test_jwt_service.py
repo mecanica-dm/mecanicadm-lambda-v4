@@ -15,7 +15,7 @@ def test_create_token_carrega_issuer_documento_e_role(monkeypatch):
 
     payload = jwt.decode(token, "test-secret", algorithms=["HS256"])
 
-    assert payload["iss"] == jwt_service.ISSUER == "mecanicadm_api"
+    assert payload["iss"] == jwt_service.ISSUER == "workorder_api"
     assert payload["sub"] == "52998224725"
     assert payload["role"] == "CLIENT"
     assert payload["exp"] > payload["iat"]

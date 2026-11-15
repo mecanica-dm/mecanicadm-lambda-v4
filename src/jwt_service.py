@@ -5,7 +5,7 @@ import jwt
 
 DEFAULT_EXPIRES_MINUTES = 60
 
-ISSUER = "mecanicadm_api"
+ISSUER = "workorder_api"
 CLIENT_ROLE = "CLIENT"
 
 
