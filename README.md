@@ -83,12 +83,12 @@ sam local start-api --parameter-overrides "JWTSecret=development"
 # CPF válido e existente no banco -> 200 + JWT
 curl -X POST http://localhost:3000/token \
   -H 'Content-Type: application/json' \
-  -d '{"document":"529.982.247-25"}'
+  -d '{"document":"790.130.460-02"}'
 
 # Sem documento -> 400 | CPF inválido -> 422 | válido sem cliente -> 404
 curl -s -X POST http://localhost:3000/token -H 'Content-Type: application/json' -d '{}'
 curl -s -X POST http://localhost:3000/token -H 'Content-Type: application/json' -d '{"document":"111.111.111-11"}'
-curl -s -X POST http://localhost:3000/token -H 'Content-Type: application/json' -d '{"document":"123.456.780/00195"}'
+curl -s -X POST http://localhost:3000/token -H 'Content-Type: application/json' -d '{"document":"12.345.678/0001-95"}'
 ```
 
 ### Como funciona a conexão com o banco
